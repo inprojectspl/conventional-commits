@@ -74,8 +74,12 @@ If the skill doesn't activate consistently (especially in long conversations), a
   "hooks": {
     "UserPromptSubmit": [
       {
-        "type": "command",
-        "command": "echo 'Check loaded skills and apply if relevant to the request.'"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Check loaded skills and apply any that are relevant to the current request.'"
+          }
+        ]
       }
     ]
   }
