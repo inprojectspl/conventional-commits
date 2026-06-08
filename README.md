@@ -11,6 +11,7 @@ This skill automatically activates whenever you ask Claude Code to create a comm
 - **Breaking change notation**: `feat!:` or `BREAKING CHANGE:` footer
 - **Imperative mood**: "add feature" not "added feature"
 - **72-character line limit** on the first line
+- **English only**: All commit messages are written in English, regardless of the conversation language
 - **No Co-Authored-By footer**: Prevents Claude from adding AI attribution to commits
 
 The skill works **automatically** — no slash command needed. Claude detects commit-related requests and applies the rules.
@@ -61,7 +62,7 @@ The skill uses Claude Code's **semantic matching** to detect when you're perform
 **What Claude will do:**
 1. Analyze the staged/changed files
 2. Determine the correct commit type
-3. Write a properly formatted message
+3. Write a properly formatted message in English
 4. Skip any Co-Authored-By or attribution footer
 
 ## Improving auto-activation reliability

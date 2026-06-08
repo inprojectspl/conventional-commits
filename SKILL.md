@@ -5,7 +5,8 @@ description: >-
   Activates when the user asks to 'commit', 'create a commit', 'save changes', 'write a commit message',
   'stage and commit', or any git commit-related task. Enforces structured commit types (feat, fix, docs,
   style, refactor, perf, test, build, ci, chore, revert), scopes, breaking change notation, and proper
-  message formatting. Prevents adding Co-Authored-By or copyright footers to commit messages.
+  message formatting. Requires all commit messages to be written in English. Prevents adding
+  Co-Authored-By or copyright footers to commit messages.
 user-invocable: false
 ---
 
@@ -96,6 +97,13 @@ Breaking changes can be indicated in TWO ways (both are valid):
 - Types, scopes, and descriptions MUST be lowercase
 - `BREAKING CHANGE` in footers MUST be uppercase
 
+### 8. Language (REQUIRED)
+
+- The ENTIRE commit message MUST be written in English — description, body, and footers alike
+- This rule is absolute and applies regardless of the conversation language, repository language, or the language used in code comments and documentation
+- Even if the user communicates in Polish (or any other language), the commit message MUST still be in English
+- Translate any user-provided commit content into English before committing
+
 ## CRITICAL — Forbidden Patterns
 
 You MUST NOT do any of the following when writing commit messages:
@@ -116,6 +124,8 @@ You MUST NOT do any of the following when writing commit messages:
 6. **NEVER exceed 72 characters** on the first line (type + scope + description combined)
 
 7. **NEVER skip the blank line** between description and body, or between body and footer
+
+8. **NEVER write any part of the commit message in a language other than English** — even when the user writes in Polish or another language, the commit message MUST be entirely in English
 
 ## Examples
 
@@ -192,7 +202,7 @@ When creating a commit:
 1. Analyze the staged changes (git diff --cached or equivalent)
 2. Determine the primary type based on the decision guide above
 3. Identify the scope from the area of code affected (if applicable)
-4. Write a concise, imperative description of what changed
+4. Write a concise, imperative description of what changed — always in English
 5. Add a body if the "why" is not obvious from the description alone
 6. Add footers if there are breaking changes, references, or reviewers
 7. Verify the message follows ALL rules above before committing
